@@ -16,8 +16,8 @@ return new class extends Migration
             $table->date('tgl');
             $table->foreignId('pelapor');
             $table->string('judul');
-            $table->string('solusi');
-            $table->foreignId('teknisi');
+            $table->string('solusi')->nullable();
+            $table->foreignId('teknisi')->nullable();
             $table->string('status');
             $table->timestamps();
         });

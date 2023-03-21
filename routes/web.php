@@ -16,9 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [ReportController::class, 'index'])->middleware('auth');
 
 Route::get('/laporan', [ReportController::class, 'index'])->middleware('auth')->name('laporan');
 
