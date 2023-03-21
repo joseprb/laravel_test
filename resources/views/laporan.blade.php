@@ -54,7 +54,7 @@
                                     {{ $report->userTeknisi->name }}
                                 @endif
                             </td>
-                            <td>{{ $report->status }}</td>
+                            <td><span class="badge badge-{{ ($report->status == 'open') ? 'success' : 'danger' }}">{{ $report->status }}</span></td>
                             <td>
                                 @if (Auth::user()->role == 'admin')
                                 @if (is_null($report->teknisi))
@@ -194,7 +194,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Assign</h4>
+                <h4 class="modal-title">Import Excel</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
